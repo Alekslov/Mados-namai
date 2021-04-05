@@ -1,0 +1,38 @@
+.list-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__buttons {
+        display: flex;
+        &>* {
+            margin: 5px;
+        }
+    }
+    &__outfit {
+            display: flex;
+            flex-direction: column;
+            &__master {
+                font-weight: bold;
+            }
+            &__type {
+                color: gray;
+                font-size: 100%;
+                font-style: italic;
+            }
+        }
+    }
+    .make-inline{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        select {
+            margin: 0 12px;
+        }
+        &.form-group {
+            margin-bottom: 0;
+        }
+    }
+.sort {
+    padding-left: 30px;
+    float: right;
+}
