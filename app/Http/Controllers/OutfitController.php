@@ -20,10 +20,20 @@ class OutfitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $outfits = Outfit::all();
-       return view('outfit.index', ['outfits' => $outfits]);
+        if ('color' == $request->sort) {
+            $outfits = Outfit::orderBy('color')->get();
+        }
+        elseif ('type' == $request->sort){
+            $outfits = Outfit::orderBy('type')->get();
+        }
+        else {
+            $outfits = Outfit::all();
+        }
+        return view('outfit.index', ['outfits' => $outfits]);
+        
+      
     }
 
     /**

@@ -9,6 +9,9 @@
            <div class="card">
             <div class="card-header">
                 <h2>Outfits List</h2>
+                <a href="{{route('outfit.index', ['sort' => 'color'])}}" class="sort" > Sort by color </a>
+                <a href="{{route('outfit.index', ['sort' => 'type'])}}" class="sort"> Sort by type </a>
+                <a href="{{route('outfit.index')}}" class="sort"> Default </a>
              </div>
 
                <div class="card-body">
@@ -17,6 +20,7 @@
                         <li class="list-group-item list-line">
                             <div class="list-line__outfit__type">
                                 {{$outfit->type}}
+                                {{$outfit->color}}
                                 <div class="list-line__outfit__master"> 
                                     {{$outfit->outfitMaster->name}} 
                                     {{$outfit->outfitMaster->surname}}
